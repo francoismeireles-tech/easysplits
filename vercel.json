@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/tools/calculate", "dest": "/tools/calculate.html" }
+  ]
+}
