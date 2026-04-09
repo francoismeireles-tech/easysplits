@@ -1,0 +1,2607 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Calculateur de Splits SACEM & International Gratuit — Easy Splits</title>
+<meta name="description" content="Calculez et négociez vos splits musicaux SACEM et international gratuitement. Répartisez les droits auteurs, compositeurs et éditeurs. Créez votre split sheet en ligne, déclarez vos œuvres à la SACEM et gérez vos cessions de droits — Free music split sheet calculator for songwriters and publishers."/>
+<meta name="keywords" content="calculateur splits musical, split sheet gratuit, comment négocier ses splits dans la musique, répartition droits auteur compositeur, déclarer ses droits à la SACEM, comment remplir une déclaration SACEM, calculateur droits musicaux, partage droits musique, comment faire un split sheet, modèle split sheet musique, éditeur musical droits, publishing deal musique, pourcentage auteur compositeur éditeur, comment calculer ses droits SACEM, droits voisins musique, comment signer avec un éditeur, cession de droits musicaux, split sheet international, music split sheet calculator free, how to split music royalties, songwriter publishing deal, music rights calculator, how to negotiate music splits, ASCAP BMI split sheet, music publishing agreement, royalty split calculator, how to register song with collection society, music producer split sheet, co-writer agreement music, sync licensing splits"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Easy Splits"/>
+<meta name="language" content="fr, en"/>
+<meta name="geo.region" content="FR"/>
+<meta name="geo.placename" content="France"/>
+<link rel="canonical" href="https://easy-splits.com/tools/calculate"/>
+
+<!-- hreflang : FR + international -->
+<link rel="alternate" hreflang="fr" href="https://easy-splits.com/tools/calculate"/>
+<link rel="alternate" hreflang="en" href="https://easy-splits.com/tools/calculate"/>
+<link rel="alternate" hreflang="x-default" href="https://easy-splits.com/tools/calculate"/>
+
+<!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://easy-splits.com/tools/calculate"/>
+<meta property="og:title" content="Calculateur de Splits SACEM & International Gratuit — Easy Splits"/>
+<meta property="og:description" content="Calculez vos splits musicaux SACEM et international gratuitement. Auteurs, compositeurs, éditeurs. Free music split sheet calculator for French and international artists."/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:locale:alternate" content="en_US"/>
+<meta property="og:locale:alternate" content="en_GB"/>
+<meta property="og:site_name" content="Easy Splits"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@easysplits"/>
+<meta name="twitter:title" content="Calculateur de Splits SACEM & International — Easy Splits"/>
+<meta name="twitter:description" content="Split sheet gratuit SACEM & international. Auteurs, compositeurs, éditeurs. Free music rights calculator."/>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Easy Splits — Calculateur de Splits Musicaux",
+  "alternateName": "Easy Splits — Music Split Sheet Calculator",
+  "description": "Calculez et négociez vos splits musicaux SACEM et international gratuitement. Comment répartir les droits auteurs, compositeurs et éditeurs, remplir une déclaration SACEM, faire un split sheet, négocier un publishing deal ou une cession de droits. Free music split sheet calculator for songwriters, producers and publishers.",
+  "url": "https://easy-splits.com/tools/calculate",
+  "applicationCategory": "MusicApplication",
+  "operatingSystem": "Web",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "availableLanguage": ["fr", "en"],
+  "inLanguage": ["fr-FR", "en-US"],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Musicians, Songwriters, Music Publishers, Record Labels, Artists"
+  },
+  "keywords": "splits SACEM, split sheet, droits auteur, compositeur, éditeur musical, music split calculator, songwriter rights, music publishing"
+
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,500;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  /* ===== EASY SPLITS CORE THEME TOKENS ===== */
+  :root {
+    --bg:      #07101e;
+    --bg2:     #0d1730;
+    --surface: rgba(255,255,255,0.04);
+    --line:    rgba(255,255,255,0.08);
+    --text:    #eef2ff;
+    --muted:   #7a87b0;
+    --accent:  #6f7cff;
+    --accent2: #8d6bff;
+    --green:   #37d58a;
+    --red:     #ff5f7e;
+    --yellow:  #ffc847;
+    --r:       16px;
+    /* ===== GLOBAL SPACING TOKENS (DO NOT CHANGE LIGHTLY) ===== */
+    --space-xs: 6px;
+    --space-sm: 10px;
+    --space-md: 16px;
+    --space-lg: 22px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    font-size: 16px;
+  }
+  input, textarea, button, select { font-family: inherit; font-size: 16px; }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+  input[type=number] { -moz-appearance: textfield; }
+
+  /* ── Header ────────────────────────────────────────────────────── */
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; height: 62px;
+    background: rgba(7,16,30,0.96);
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    gap: 14px;
+  }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+  .logo-badge {
+    font-size: 14px; font-weight: 700; letter-spacing: .09em;
+    color: var(--accent); text-transform: uppercase;
+    padding: 6px 13px; border-radius: 7px;
+    background: rgba(111,124,255,0.13);
+    border: 1px solid rgba(111,124,255,0.25);
+  }
+  .logo-name { font-size: 24px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+
+  /* Mode toggle */
+  .mode-toggle {
+    display: flex; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 10px; padding: 3px; gap: 2px;
+  }
+  .mode-btn {
+    padding: 6px 15px; border-radius: 8px; border: none;
+    font-size: 12px; font-weight: 700; cursor: pointer;
+    color: rgba(159,170,209,0.55); background: transparent;
+    transition: all .15s; white-space: nowrap;
+  }
+  .mode-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; box-shadow: 0 2px 10px rgba(111,124,255,.35);
+  }
+
+  /* ── Header mobile : 2 lignes ─────────────────────────────────── */
+  @media (max-width: 600px) {
+    .header {
+      height: auto;
+      flex-wrap: wrap;
+      padding: 10px 14px;
+      gap: 8px;
+    }
+    .header-right {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .mode-toggle { flex: 1; }
+    .mode-btn { flex: 1; text-align: center; padding: 6px 4px; font-size: 11px; }
+  }
+
+  /* ── Layout ────────────────────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+    padding: 40px 40px 40px;
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  /* Tablette : colonne unique, résumé en dessous, aperçu tout à la fin */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; padding: 40px 24px 24px; gap: 28px; max-width: 600px; }
+    .summary-col { order: 1; position: static; }
+  }
+  /* Mobile */
+  @media (max-width: 600px) {
+    .layout { padding: 40px 20px 20px; gap: 24px; }
+  }
+
+
+  /* ── Project card ──────────────────────────────────────────────── */
+  /* ===== PROJECT CARD (SAAS PREMIUM CLASSIC TEXT BLOCK) ===== */
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 30px;
+  }
+
+  .project-fields {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .project-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .project-title-input,
+  .project-artist-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0;
+    box-shadow: none;
+    transition: border-color .15s ease;
+  }
+
+  .project-title-input {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .project-title-input::placeholder {
+    color: rgba(159,170,209,0.25);
+    font-weight: 500;
+  }
+
+  .project-artist-input {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .project-artist-input::placeholder {
+    color: rgba(159,170,209,0.2);
+  }
+
+  .project-title-input:hover,
+  .project-artist-input:hover {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .project-title-input:focus,
+  .project-artist-input:focus {
+    border-bottom: 1px solid rgba(111,124,255,0.5);
+  }
+
+  @media (max-width: 600px) {
+    .project-card {
+      gap: 24px;
+      padding: 18px;
+      margin-bottom: 24px;
+    }
+    .project-fields {
+      gap: 24px;
+    }
+    .notes-input { width: 100%; }
+  }
+
+
+  /* Ad slot */
+  .ad-slot {
+    min-height: 72px; background: rgba(255,255,255,0.02);
+    border: 1px dashed rgba(255,255,255,0.06); border-radius: 12px;
+    margin-bottom: 14px; display: flex; align-items: center;
+    justify-content: center; color: rgba(255,255,255,0.1);
+    font-size: 11px; font-style: italic;
+  }
+
+  /* Section head */
+  .section-head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--muted);
+  }
+
+  /* ── Holder card ───────────────────────────────────────────────── */
+  .holder-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--r); margin-bottom: 20px; overflow: hidden;
+    transition: border-color .15s;
+  }
+  .holder-card:hover { border-color: rgba(111,124,255,0.2); }
+  .holder-top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 17px; gap: 10px;
+  }
+  .holder-identity { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+  .avatar {
+    width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800;
+  }
+  .holder-name { font-size: 15px; font-weight: 800; }
+  .holder-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .holder-actions { display: flex; gap: 5px; flex-shrink: 0; }
+
+  .holder-body { padding: 0 15px 13px; display: grid; gap: 9px; }
+
+  /* Pills */
+  .pill-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pill {
+    display: flex; align-items: center; gap: 5px;
+    padding: 4px 11px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; border: 1px solid;
+  }
+  .pill-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .pill-author   { background: rgba(111,124,255,0.1); border-color: rgba(111,124,255,0.25); }
+  .pill-author .pill-dot { background: var(--accent); box-shadow: 0 0 5px rgba(111,124,255,.5); }
+  .pill-composer { background: rgba(141,107,255,0.1); border-color: rgba(141,107,255,0.25); }
+  .pill-composer .pill-dot { background: var(--accent2); box-shadow: 0 0 5px rgba(141,107,255,.5); }
+  .pill-writer   { background: rgba(111,124,255,0.12); border-color: rgba(111,124,255,0.3); }
+  .pill-writer .pill-dot { background: var(--accent); }
+
+  /* Progress bar */
+  .bar { height: 5px; border-radius: 999px; background: rgba(255,255,255,0.06); display: flex; overflow: hidden; }
+  .bar-seg { height: 100%; transition: width .3s cubic-bezier(.4,0,.2,1); }
+  .bar-author   { background: linear-gradient(90deg, rgba(111,124,255,.9), rgba(111,124,255,.6)); }
+  .bar-composer { background: linear-gradient(90deg, rgba(141,107,255,.9), rgba(141,107,255,.6)); }
+  .bar-writer   { background: linear-gradient(90deg, rgba(111,124,255,.9), rgba(141,107,255,.7)); }
+  .bar-pub      { background: linear-gradient(90deg, rgba(55,213,138,.85), rgba(55,213,138,.55)); }
+
+  /* Publisher chips */
+  .pub-chips { display: flex; gap: 5px; flex-wrap: wrap; }
+  .pub-chip {
+    font-size: 11px; color: var(--muted);
+    background: rgba(55,213,138,0.06); border: 1px solid rgba(55,213,138,0.15);
+    border-radius: 999px; padding: 3px 9px;
+  }
+  .pub-chip strong { color: var(--green); font-weight: 700; }
+
+  /* ── Buttons ───────────────────────────────────────────────────── */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; font-size: 12px; font-weight: 700;
+    border: none; border-radius: 9px; padding: 7px 14px; cursor: pointer;
+  }
+  .btn-soft {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--muted); font-size: 12px; font-weight: 600;
+    border-radius: 9px; padding: 7px 12px; cursor: pointer;
+  }
+  .btn-del {
+    background: rgba(255,95,126,0.09); color: #ffb3c0;
+    border: 1px solid rgba(255,95,126,0.2);
+    font-size: 13px; font-weight: 700; border-radius: 9px;
+    padding: 6px 10px; cursor: pointer;
+  }
+  .btn-add-holder {
+    width: 100%; border: 1.5px dashed rgba(111,124,255,0.22);
+    background: transparent; color: rgba(111,124,255,0.55);
+    font-size: 14px; font-weight: 700; border-radius: var(--r);
+    padding: 15px; cursor: pointer; transition: all .15s;
+    margin: 0 0 20px 0;
+  }
+  .btn-add-holder:hover {
+    background: rgba(111,124,255,0.07);
+    border-color: rgba(111,124,255,0.45);
+    color: rgba(111,124,255,.9);
+  }
+
+  /* Action bar */
+  .action-bar { display: flex; gap: 8px; margin-top: 20px; }
+  .btn-action {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+    background: var(--surface); border: 1px solid var(--line);
+    color: var(--muted); font-size: 12px; font-weight: 700;
+    border-radius: 10px; padding: 10px; cursor: pointer; transition: all .15s;
+  }
+  .btn-action:hover { background: rgba(111,124,255,0.1); border-color: rgba(111,124,255,.3); color: var(--text); }
+
+  /* ── Summary column ────────────────────────────────────────────── */
+  .summary-col { position: sticky; top: 70px; display: grid; gap: 20px; align-self: start; }
+  .summary-label-top {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--muted); margin-bottom: 10px;
+  }
+  #summaryList { display: grid; gap: 20px; margin-bottom: 40px; }
+  .sum-section {
+    border-radius: var(--r); overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .sum-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .sum-section-title { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+  .sum-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .sum-rows { display: grid; }
+  .sum-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 7px 13px; border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 13px;
+  }
+  .sum-row:last-child { border-bottom: none; }
+  .sum-name { color: var(--muted); font-weight: 500; }
+  .sum-val { font-weight: 700; }
+  /* Only total row goes green when complete — handled inline */
+  .sum-total {
+  display: flex; justify-content: space-between;
+  padding: 7px 13px; font-size: 10px; font-weight: 700;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+  .sum-total-label { color: var(--muted); }
+  .total-ok   { color: var(--green); }
+  .total-warn { color: var(--yellow); }
+  .total-over { color: var(--red); }
+  .sum-empty { padding: 9px 13px; font-size: 12px; color: rgba(159,170,209,0.3); font-style: italic; }
+
+  /* ── Modal ─────────────────────────────────────────────────────── */
+  .modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(2,6,23,.78);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 200; padding: 18px;
+    animation: backdropFadeIn .18s ease-out;
+  }
+  .modal-backdrop.hidden { display: none; }
+  .modal {
+    width: 100%; max-width: 560px; max-height: 90vh;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #0d1630, #0a1124);
+    border: 1.5px solid rgba(111,124,255,0.3);
+    border-radius: 22px;
+    box-shadow: 0 30px 100px rgba(0,0,0,.6), 0 0 40px rgba(111,124,255,0.08);
+    animation: popupFadeIn .22s cubic-bezier(.2,.8,.2,1);
+  }
+  .modal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(111,124,255,0.15);
+    background: rgba(111,124,255,0.05);
+    border-radius: 22px 22px 0 0;
+  }
+  .modal-header-title {
+    font-size: 15px; font-weight: 800; color: var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .modal-header-icon {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: rgba(111,124,255,0.15); border: 1px solid rgba(111,124,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .modal-header-close {
+    width: 32px; height: 32px; border-radius: 9px;
+    border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.05);
+    color: var(--muted); font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .12s;
+  }
+  .modal-header-close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+  /* ===== RIGHTS HOLDER MODAL / SHARED SPACING GRID ===== */
+  .modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .modal-backdrop { padding: 12px; }
+    .modal { border-radius: 18px; max-width: 100%; }
+    .modal-header { padding: 14px 16px; }
+    .modal-body { padding: var(--space-md); gap: var(--space-md); }
+    .modal-footer { padding: var(--space-md); }
+  }
+
+  /* ===== PRIMARY IDENTITY BLOCK / FIRST SECTION INSIDE MODAL ===== */
+  .identity-block {
+    background: rgba(111,124,255,0.03);
+    border: 1px solid rgba(111,124,255,0.12);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .modal-name-input {
+    border: none; background: rgba(255,255,255,0.05); outline: none;
+    font-size: 17px; font-weight: 700; color: var(--text); width: 100%;
+    border-radius: 12px; padding: 12px 14px;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    transition: border-color .15s;
+    font-family: inherit;
+  }
+  .modal-name-input:focus { border-color: rgba(111,124,255,0.5); }
+  .modal-name-input::placeholder { color: rgba(159,170,209,0.25); font-weight: 500; }
+
+  /* Section labels inside modal */
+  /* ===== SMALL SECTION LABELS / KEEP CONSISTENT ACROSS ALL POPUPS ===== */
+  .modal-section-label {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--muted); margin-bottom: var(--space-xs);
+  }
+
+  /* ===== SPLIT INPUT ROW / AUTHOR + COMPOSER PILLS ===== */
+  .pct-row { display: flex; gap: 20px; flex-wrap: wrap; }
+  .pct-pill {
+    display: flex; align-items: center; flex: 1; min-width: 140px;
+    border: 1.5px solid rgba(111,124,255,0.15);
+    border-radius: 14px; overflow: hidden;
+    background: rgba(111,124,255,0.04); transition: all .2s;
+  }
+  .pct-pill:focus-within {
+    border-color: rgba(111,124,255,0.5);
+    box-shadow: 0 0 16px rgba(111,124,255,0.1);
+  }
+
+  /* Author / Composer input blocks color coding */
+  .pct-pill.author-block {
+    border-color: rgba(111,124,255,0.28);
+    background: rgba(111,124,255,0.08);
+  }
+  .pct-pill.author-block .pct-label {
+    color: #7f8cff;
+    background: rgba(111,124,255,0.09);
+    border-right-color: rgba(111,124,255,0.18);
+  }
+  .pct-pill.author-block .pct-unit {
+    color: #7f8cff;
+  }
+  .pct-pill.author-block:focus-within {
+    border-color: rgba(111,124,255,0.48);
+    box-shadow: 0 0 16px rgba(111,124,255,0.12);
+  }
+
+  .pct-pill.composer-block {
+    border-color: rgba(141,107,255,0.28);
+    background: rgba(141,107,255,0.08);
+  }
+  .pct-pill.composer-block .pct-label {
+    color: #9a7bff;
+    background: rgba(141,107,255,0.09);
+    border-right-color: rgba(141,107,255,0.18);
+  }
+  .pct-pill.composer-block .pct-unit {
+    color: #9a7bff;
+  }
+  .pct-pill.composer-block:focus-within {
+    border-color: rgba(141,107,255,0.48);
+    box-shadow: 0 0 16px rgba(141,107,255,0.12);
+  }
+  .pct-label {
+    padding: 12px 13px; font-size: 12px; font-weight: 800; color: var(--accent);
+    border-right: 1px solid rgba(111,124,255,0.1);
+    white-space: nowrap; background: rgba(111,124,255,0.06);
+    text-transform: uppercase; letter-spacing: .04em;
+  }
+  .pct-input {
+    flex: 1; border: none; background: transparent;
+    color: var(--text); font-size: 17px; font-weight: 700;
+    padding: 12px 6px 12px 12px; outline: none; min-width: 40px;
+    font-family: 'DM Mono', monospace;
+  }
+  .pct-unit { padding: 0 10px 0 2px; font-size: 13px; font-weight: 800; color: var(--accent); }
+
+  .modal-bar {
+    height: 6px; border-radius: 999px;
+    background: rgba(255,255,255,0.06); display: flex; overflow: hidden;
+  }
+
+  /* Pub rows in modal — pill style */
+  /* ===== PUBLISHER LIST AREA / SAME SPACING RHYTHM AS OTHER MODALS ===== */
+  .modal-pub-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pub-row {
+    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px; padding: 12px 14px;
+    transition: border-color .15s;
+  }
+  .pub-row:hover { border-color: rgba(55,213,138,0.25); }
+
+  /* Publisher name pill (green) */
+  .pub-name-pill {
+    display: flex; align-items: center; gap: 7px;
+    background: rgba(55,213,138,0.08); border: 1px solid rgba(55,213,138,0.2);
+    border-radius: 999px; padding: 8px 14px; flex: 1; min-width: 100px;
+  }
+  .pub-name-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--green); box-shadow: 0 0 6px rgba(55,213,138,.5);
+    flex-shrink: 0;
+  }
+  .pub-name-input {
+    flex: 1; border: none; background: transparent; color: var(--green);
+    font-size: 14px; font-weight: 700; outline: none;
+    font-family: inherit; min-width: 60px;
+  }
+  .pub-name-input::placeholder { color: rgba(55,213,138,0.35); font-weight: 500; }
+
+  /* Pct controls */
+  .pub-pct-input {
+    width: 50px; border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.06); color: var(--text);
+    font-size: 14px; font-weight: 700; border-radius: 10px;
+    padding: 8px 8px; outline: none; text-align: right;
+    font-family: 'DM Mono', monospace;
+  }
+  .pub-pct-input:focus { border-color: rgba(55,213,138,.4); box-shadow: 0 0 10px rgba(55,213,138,0.08); }
+  .pub-unit { font-size: 13px; color: var(--green); font-weight: 800; }
+  .btn-remove-pub {
+    width: 34px; height: 34px; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04); color: var(--muted);
+    font-size: 16px; cursor: pointer; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .12s;
+  }
+  .btn-remove-pub:hover { background: rgba(255,95,126,0.1); color: var(--red); border-color: rgba(255,95,126,0.2); }
+  .btn-add-pub {
+    width: 100%; border: 1.5px dashed rgba(55,213,138,0.2);
+    background: transparent; color: rgba(55,213,138,0.55);
+    font-size: 13px; font-weight: 700; border-radius: 14px;
+    padding: 13px; cursor: pointer; transition: all .15s;
+    font-family: inherit;
+  }
+  .btn-add-pub:hover {
+    background: rgba(55,213,138,0.06);
+    border-color: rgba(55,213,138,0.45); color: rgba(55,213,138,.95);
+  }
+
+  /* ===== MODAL FOOTER / STANDARD ACTION LAYOUT ===== */
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 20px 22px 22px;
+  }
+  .modal-footer .btn-soft {
+    height: 44px;
+    min-width: 140px;
+    padding: 0 24px; font-size: 14px; font-weight: 700;
+    border-radius: 14px; border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05); color: var(--muted);
+    cursor: pointer; transition: all .15s; font-family: inherit;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: 1;
+  }
+  .modal-footer .btn-soft:hover { background: rgba(255,255,255,0.08); color: var(--text); }
+  .modal-footer .btn-primary {
+    height: 44px;
+    min-width: 140px;
+    padding: 0 24px; font-size: 14px; font-weight: 700;
+    border-radius: 14px; border: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; cursor: pointer; transition: all .15s; font-family: inherit;
+    box-shadow: 0 4px 16px rgba(111,124,255,0.25);
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: 1;
+  }
+  .modal-footer .btn-primary:hover { box-shadow: 0 6px 24px rgba(111,124,255,0.35); }
+  .modal-footer button { flex: 1; }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+    background: #0d1630; border: 1px solid rgba(111,124,255,.3);
+    color: var(--text); font-size: 13px; font-weight: 600;
+    padding: 9px 20px; border-radius: 999px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.4);
+    z-index: 300; white-space: nowrap;
+    animation: toastIn .2s ease; pointer-events: none;
+  }
+  .toast.hidden { display: none; }
+  @keyframes toastIn { from { opacity:0; transform:translateX(-50%) translateY(8px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+
+  /* ── Cession popup ──────────────────────────────────────────────── */
+  .cess-popup-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(2,6,23,.78);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 200; padding: 18px;
+    animation: backdropFadeIn .18s ease-out;
+  }
+  .cess-popup-backdrop.hidden { display: none; }
+  .cess-popup {
+    width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto;
+    background: linear-gradient(180deg, #0d1730, #0a1124);
+    border: 1.5px solid rgba(141,107,255,0.3);
+    border-radius: 22px;
+    box-shadow: 0 30px 100px rgba(0,0,0,.6), 0 0 40px rgba(141,107,255,0.08);
+    animation: popupFadeIn .22s cubic-bezier(.2,.8,.2,1);
+  }
+  .cess-popup-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(141,107,255,0.15);
+    background: rgba(141,107,255,0.05);
+    border-radius: 22px 22px 0 0;
+  }
+  .cess-popup-title {
+    font-size: 15px; font-weight: 800; color: var(--accent2);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .cess-popup-title-icon {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: rgba(141,107,255,0.15); border: 1px solid rgba(141,107,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .cess-popup-close {
+    width: 32px; height: 32px; border-radius: 9px;
+    border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.05);
+    color: var(--muted); font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .12s;
+  }
+  .cess-popup-close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+  /* ===== TRANSFER POPUP BODY / MIRRORS MAIN MODAL SPACING ===== */
+  .cess-popup-body {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .cess-popup-empty {
+    font-size: 13px; color: rgba(159,170,209,0.35);
+    font-style: italic; padding: 12px 0; text-align: center;
+  }
+
+  /* Cession card — pill style */
+  .cess-card {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 12px 14px;
+    transition: border-color .15s;
+  }
+  .cess-card:hover { border-color: rgba(141,107,255,0.25); }
+
+  /* Source pill (green) */
+  .cess-source-pill {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(55,213,138,0.08); border: 1px solid rgba(55,213,138,0.2);
+    border-radius: 999px; padding: 6px 12px; min-width: 0;
+  }
+  .cess-source-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px rgba(55,213,138,.5); flex-shrink: 0; }
+  .cess-source-select {
+    background: transparent; border: none; color: var(--green);
+    font-size: 13px; font-weight: 700; outline: none; cursor: pointer;
+    font-family: inherit; padding: 0; min-width: 80px;
+  }
+  .cess-source-select option { background: #0d1730; color: var(--text); }
+
+  /* Arrow */
+  .cess-arrow { color: rgba(141,107,255,0.5); font-size: 16px; font-weight: 800; flex-shrink: 0; }
+
+  /* Beneficiary pill (purple) */
+  .cess-bene-pill {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(141,107,255,0.08); border: 1px solid rgba(141,107,255,0.2);
+    border-radius: 999px; padding: 6px 12px; flex: 1; min-width: 100px;
+  }
+  .cess-bene-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); box-shadow: 0 0 6px rgba(141,107,255,.5); flex-shrink: 0; }
+  .cess-bene-input {
+    background: transparent; border: none; color: var(--accent2);
+    font-size: 13px; font-weight: 700; outline: none; width: 100%;
+    font-family: inherit;
+  }
+  .cess-bene-input::placeholder { color: rgba(141,107,255,0.35); font-weight: 500; }
+
+  /* Value controls */
+  .cess-val-group { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+  .cess-mode-select {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09);
+    color: var(--muted); font-size: 12px; font-weight: 700;
+    border-radius: 8px; padding: 6px 6px; outline: none; cursor: pointer;
+    font-family: inherit;
+  }
+  .cess-val-input {
+    width: 52px; border: 1px solid rgba(255,255,255,0.09);
+    background: rgba(255,255,255,0.05); color: var(--text);
+    font-size: 13px; font-weight: 700; border-radius: 8px;
+    padding: 6px 7px; outline: none; text-align: right;
+  }
+  .cess-val-input:focus { border-color: rgba(141,107,255,.5); }
+  .cess-val-unit { font-size: 12px; color: var(--accent2); font-weight: 700; }
+  .btn-remove-cess {
+    width: 30px; height: 30px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.09);
+    background: rgba(255,255,255,0.05); color: var(--muted);
+    font-size: 16px; cursor: pointer; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .12s;
+  }
+  .btn-remove-cess:hover { background: rgba(255,95,126,0.1); color: var(--red); }
+
+  /* ===== TRANSFER POPUP FOOTER / SAME BUTTON LOGIC AS MAIN MODAL ===== */
+  .cess-popup-footer {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  /* ===== TRANSFER ADD BUTTON / VERTICAL DISTANCE MUST MATCH ADD PUBLISHER ===== */
+  .btn-add-cess {
+    width: 100%; border: 1.5px dashed rgba(141,107,255,0.25);
+    background: transparent; color: rgba(141,107,255,0.6);
+    font-size: 13px; font-weight: 700; border-radius: 11px;
+    padding: 11px; cursor: pointer; transition: all .15s;
+    font-family: inherit;
+    margin: 0 0 20px 0;
+  }
+  .btn-add-cess:hover {
+    background: rgba(141,107,255,0.08);
+    border-color: rgba(141,107,255,0.5); color: rgba(141,107,255,.95);
+  }
+
+
+  /* ===== SHARED POPUP ACTION ROW / USED BY BOTH CANCEL + CONFIRM BUTTONS ===== */
+  .popup-action-row {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: 0;
+  }
+  .popup-action-row .btn-soft,
+  .popup-action-row .btn-primary {
+    flex: 1;
+    height: 44px;
+    min-width: 140px;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 14px;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* ===== TRANSFER CONFIRM BUTTON / KEEP PURPLE EMPHASIS WITHOUT CHANGING SYSTEM ===== */
+  .cess-confirm-btn {
+    background: linear-gradient(135deg, var(--accent2), #6f5bff) !important;
+    box-shadow: 0 4px 16px rgba(141,107,255,0.25) !important;
+  }
+
+  /* Open cession popup button */
+  .btn-open-cess {
+    width: 100%; margin-top: 0;
+    background: rgba(141,107,255,0.06);
+    border: 1.5px solid rgba(141,107,255,0.2);
+    color: rgba(141,107,255,0.75); font-size: 14px; font-weight: 700;
+    border-radius: var(--r); padding: 14px; cursor: pointer;
+    transition: all .15s; font-family: inherit;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-open-cess:hover {
+    background: rgba(141,107,255,0.12);
+    border-color: rgba(141,107,255,0.4);
+    color: rgba(141,107,255,1);
+  }
+  .btn-open-cess .cess-badge {
+    background: rgba(141,107,255,0.2); color: var(--accent2);
+    font-size: 11px; font-weight: 800; padding: 2px 7px;
+    border-radius: 999px; min-width: 18px; text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .cess-popup-backdrop { padding: 12px; }
+    .cess-popup { border-radius: 18px; max-width: 100%; }
+    .cess-popup-header { padding: 14px 16px; }
+    .cess-popup-body { padding: var(--space-md); gap: var(--space-md); }
+    .cess-popup-footer { padding: var(--space-md); }
+    .cess-card { gap: 6px; padding: 10px; flex-wrap: wrap; }
+    .cess-source-pill { padding: 5px 10px; }
+    .cess-source-select { font-size: 12px; min-width: 60px; }
+    .popup-action-row { gap: 8px; }
+    .popup-action-row .btn-soft,
+    .popup-action-row .btn-primary { height: 40px; font-size: 12px; padding: 0 16px; }
+    .cess-bene-pill { padding: 5px 10px; min-width: 80px; }
+    .cess-bene-input { font-size: 12px; }
+    .cess-val-input { width: 44px; font-size: 12px; }
+    .btn-remove-cess { width: 26px; height: 26px; font-size: 14px; }
+  }
+
+  /* ── Modal mobile fixes ─────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .identity-block { padding: 12px; }
+    .modal-name-input { font-size: 15px; padding: 10px 12px; }
+
+    /* Pct pills */
+    .pct-row { gap: 6px; }
+    .pct-pill { min-width: 0; flex: 1; border-radius: 12px; }
+    .pct-label { padding: 10px 10px; font-size: 11px; }
+    .pct-input { font-size: 15px; padding: 10px 4px 10px 8px; width: 36px; flex: none; text-align: center; }
+    .pct-unit { padding: 0 6px 0 2px; font-size: 11px; flex-shrink: 0; }
+    .pct-stepper { flex-shrink: 0; }
+    .pct-step-btn { width: 26px; }
+
+    /* Pub rows */
+    .modal-pub-section { gap: 8px; }
+    .pub-row {
+      padding: 10px; gap: 8px;
+      flex-wrap: wrap;
+      border-radius: 14px;
+    }
+    .pub-name-pill { padding: 6px 10px; min-width: 80px; }
+    .pub-name-input { font-size: 13px; min-width: 0; }
+    .pub-pct-wrap { flex-shrink: 0; border-radius: 8px; }
+    .pub-pct-input { width: 38px; font-size: 13px; padding: 6px 5px; }
+    .pub-unit { font-size: 12px; }
+    .btn-remove-pub { width: 30px; height: 30px; font-size: 14px; flex-shrink: 0; }
+    .btn-add-pub { font-size: 12px; padding: 11px; border-radius: 12px; }
+
+    /* Footer buttons */
+    .modal-footer { padding: 4px 14px 16px; gap: 8px; }
+    .modal-footer .btn-soft { padding: 9px 16px; font-size: 12px; }
+    .modal-footer .btn-primary { padding: 9px 20px; font-size: 12px; }
+  }
+
+  /* Stepper inside pct pill */
+  .pct-stepper { display: flex; flex-direction: column; border-left: 1px solid rgba(111,124,255,0.1); }
+  .pct-step-btn {
+    flex: 1; width: 30px; background: transparent; border: none;
+    color: rgba(111,124,255,0.5); font-size: 11px; font-weight: 700;
+    cursor: pointer; line-height: 1; transition: color .12s, background .12s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pct-step-btn:hover { color: var(--accent); background: rgba(111,124,255,0.1); }
+  .pct-step-btn:first-child { border-bottom: 1px solid rgba(111,124,255,0.1); border-radius: 0 12px 0 0; }
+  .pct-step-btn:last-child  { border-radius: 0 0 12px 0; }
+
+  /* Stepper in pub rows */
+  .pub-pct-wrap {
+    display: flex; align-items: center; gap: 0;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 10px;
+    overflow: hidden; background: rgba(255,255,255,0.06);
+  }
+  .pub-pct-wrap .pub-pct-input { border: none; background: transparent; border-radius: 0; padding: 8px 6px; }
+  .pub-stepper { display: flex; flex-direction: column; border-left: 1px solid rgba(255,255,255,0.08); }
+  .pub-step-btn {
+    flex: 1; width: 26px; height: 18px; background: transparent; border: none;
+    color: rgba(255,255,255,0.3); font-size: 9px; font-weight: 700; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: color .12s, background .12s; line-height: 1;
+  }
+  .pub-step-btn:hover { color: var(--green); background: rgba(55,213,138,0.1); }
+  .pub-step-btn:first-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+  /* Fake AdSense */
+  .ad-adsense {
+    width: 100%; border-radius: 10px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+    margin-bottom: 14px; position: relative;
+  }
+  .ad-label {
+    position: absolute; top: 4px; right: 6px;
+    font-size: 9px; color: rgba(255,255,255,0.2);
+    letter-spacing: .05em; text-transform: uppercase;
+  }
+  .ad-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 16px; gap: 14px;
+  }
+  .ad-logo { font-size: 18px; font-weight: 900; color: rgba(255,255,255,0.08); letter-spacing: -0.03em; }
+  .ad-text { flex: 1; }
+  .ad-text-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.3); }
+  .ad-text-sub { font-size: 11px; color: rgba(255,255,255,0.15); margin-top: 2px; }
+  .ad-cta {
+    font-size: 11px; font-weight: 700; color: rgba(111,124,255,0.5);
+    border: 1px solid rgba(111,124,255,0.2); border-radius: 8px;
+    padding: 5px 12px; white-space: nowrap; background: rgba(111,124,255,0.05);
+  }
+
+  /* Reset button */
+  .btn-reset {
+    background: rgba(255,95,126,0.07); border: 1px solid rgba(255,95,126,0.18);
+    color: rgba(255,95,126,0.6); font-size: 11px; font-weight: 700;
+    border-radius: 8px; padding: 6px 12px; cursor: pointer;
+    transition: all .13s;
+  }
+  .btn-reset:hover { background: rgba(255,95,126,0.14); color: #ff5f7e; }
+
+  /* Reset confirm popup */
+  .popup-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(2,6,23,.82);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 400; padding: 20px;
+  }
+  .popup-backdrop.hidden { display: none; }
+  .popup {
+    background: linear-gradient(180deg, #0d1630, #0a1124);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 28px 24px;
+    max-width: 360px; width: 100%;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6);
+    text-align: center;
+  }
+  .popup-icon { margin-bottom: 16px; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 16px; background: rgba(255,95,126,0.1); border: 1px solid rgba(255,95,126,0.2); margin: 0 auto 16px; }
+  .popup-title { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
+  .popup-sub { font-size: 13px; color: #7a87b0; line-height: 1.5; margin-bottom: 22px; }
+  .popup-actions { display: flex; gap: 10px; }
+  .popup-cancel {
+    flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    color: #7a87b0; font-size: 13px; font-weight: 700;
+    border-radius: 12px; padding: 12px; cursor: pointer; font-family: inherit;
+  }
+  .popup-confirm {
+    flex: 1; background: linear-gradient(135deg, #ff5f7e, #ff3d5a);
+    border: none; color: #fff; font-size: 13px; font-weight: 700;
+    border-radius: 12px; padding: 12px; cursor: pointer; font-family: inherit;
+    box-shadow: 0 4px 15px rgba(255,95,126,0.3);
+  }
+
+  /* Preview bloc-note */
+  .preview-block {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px; overflow: hidden;
+  }
+  .preview-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.03);
+  }
+  .preview-label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--muted);
+  }
+  .preview-copy-btn {
+    font-size: 11px; font-weight: 700; color: var(--accent);
+    background: rgba(111,124,255,0.1); border: 1px solid rgba(111,124,255,0.2);
+    border-radius: 7px; padding: 4px 10px; cursor: pointer;
+  }
+  .preview-content {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    color: var(--muted); line-height: 1.7;
+    padding: 14px 16px; margin: 0;
+    white-space: pre-wrap; word-break: break-word;
+    max-height: 300px; overflow-y: auto;
+  }
+  .preview-content .preview-title { color: var(--text); font-weight: 700; }
+  .preview-content .preview-a { color: #6f7cff; }
+  .preview-content .preview-c { color: #8d6bff; }
+  .preview-content .preview-e { color: #37d58a; }
+  .preview-content .preview-footer { color: rgba(159,170,209,0.3); font-size: 11px; }
+
+/* ===== TEXT SCALE PLUS ===== */
+
+body { font-size: 18px; }
+
+input, textarea, button, select {
+  font-size: 18px;
+}
+
+.project-title-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0;
+  box-shadow: none;
+  transition: border-color .15s ease;
+}
+.project-artist-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0;
+  box-shadow: none;
+  transition: border-color .15s ease;
+}
+
+.holder-name { font-size: 17px; }
+.holder-sub { font-size: 13px; }
+
+.pill { font-size: 13px; }
+.pub-chip { font-size: 13px; }
+
+.btn-primary,
+.btn-soft,
+.btn-action {
+  font-size: 14px;
+}
+
+.sum-row { font-size: 15px; }
+.sum-section-title { font-size: 13px; }
+
+.modal-name-input { font-size: 17px; }
+.pct-input { font-size: 16px; }
+.pub-name-input { font-size: 14px; }
+
+
+/* ===== BIGGER DELETE ICONS ===== */
+
+.btn-del,
+.btn-del-holder {
+  font-size: 18px; /* 🔥 croix plus grosse */
+  padding: 8px 12px;
+}
+
+.btn-del svg,
+.btn-del-holder svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* ===== BIGGER DELETE BUTTON TEXT ===== */
+
+.btn-del,
+.btn-del-holder {
+  font-size: 16px; /* texte plus gros */
+  font-weight: 800;
+}
+
+
+/* ===== SQUARE DELETE BUTTON + BIG CROSS ===== */
+
+.btn-del,
+.btn-del-holder {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 12px; /* carré arrondi */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px; /* croix + grosse */
+  line-height: 1;
+}
+
+
+/* ===== POPUP / MODAL SMOOTH APPEAR ANIMATION ===== */
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-backdrop,
+.popup-backdrop,
+.delete-popup-backdrop,
+.reset-popup-backdrop {
+  animation: backdropFadeIn .18s ease-out;
+}
+
+.modal,
+.popup,
+.delete-popup,
+.reset-popup,
+.popup-card {
+  animation: popupFadeIn .22s cubic-bezier(.2,.8,.2,1);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+
+/* ===== POPUP CLOSE ANIMATION ===== */
+
+@keyframes popupFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+}
+
+@keyframes backdropFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* class à ajouter en JS avant hide */
+.popup-closing,
+.modal-closing {
+  animation: popupFadeOut .18s ease forwards;
+}
+
+.backdrop-closing {
+  animation: backdropFadeOut .18s ease forwards;
+}
+
+
+/* ===== AVATAR BIGGER ===== */
+.avatar {
+  width: 48px;
+  height: 48px;
+  font-size: 17px;
+}
+
+/* ===== FIRST LETTER ONLY VISUAL CASE ===== */
+input:not([type="number"]):not([type="email"]),
+textarea {
+  text-transform: none;
+}
+.holder-name {
+  text-transform: none;
+}
+
+
+/* === PATCH UNIFORM TEXT SUMMARY === */
+.sum-row { font-size:14px; }
+.sum-name { font-size:14px; font-weight:500; }
+.sum-val { font-size:14px; font-weight:700; }
+.sum-total {
+  display: flex; justify-content: space-between;
+  padding: 7px 13px; font-size: 10px; font-weight: 700;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.sum-total-label { font-size:14px; }
+/* === END PATCH === */
+
+
+.pub-pct-input.manual {
+  border-color: rgba(55,213,138,0.42) !important;
+  box-shadow: 0 0 0 1px rgba(55,213,138,0.18);
+}
+
+.pub-pct-wrap.manual-active {
+  border-color: rgba(55,213,138,0.32);
+  box-shadow: 0 0 0 1px rgba(55,213,138,0.12);
+}
+
+
+
+/* Author / Composer top blocks */
+.split-input.author {
+  border-color: rgba(111,124,255,0.35);
+  background: rgba(111,124,255,0.06);
+}
+.split-input.author .split-label {
+  color: #7f8cff;
+}
+
+.split-input.composer {
+  border-color: rgba(141,107,255,0.35);
+  background: rgba(141,107,255,0.06);
+}
+.split-input.composer .split-label {
+  color: #9a7bff;
+}
+
+
+/* Specific pct-pill colors */
+.pct-pill.author-blue {
+  border-color: rgba(111,124,255,0.4);
+  background: rgba(111,124,255,0.08);
+}
+.pct-pill.author-blue .pct-label,
+.pct-pill.author-blue .pct-unit {
+  color: #7f8cff;
+}
+
+.pct-pill.author-violet {
+  border-color: rgba(141,107,255,0.4);
+  background: rgba(141,107,255,0.08);
+}
+.pct-pill.author-violet .pct-label,
+.pct-pill.author-violet .pct-unit {
+  color: #9a7bff;
+}
+
+
+  /* ===== MODAL SECONDARY STACK / KEEP BUTTON DISTANCE CONSISTENT ===== */
+  .modal-pub-section {
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+  }
+  .btn-add-pub {
+    margin-top: 0;
+  }
+
+  /* Entry animations: publishers and cessions */
+  @keyframes fadeSlideUpIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .pub-row-wrapper,
+  .cess-card {
+    animation: fadeSlideUpIn .22s cubic-bezier(.2,.8,.2,1);
+  }
+
+</style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JE7RWKBQPQ">
+</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JE7RWKBQPQ');
+  
+</script>
+</head>
+<body>
+
+<!-- ===== APP HEADER / BRAND + MODE SWITCH + RESET ===== -->
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-badge">Easy</span>
+    <span class="logo-name">Splits</span>
+  </a>
+  <div class="header-right">
+    <button class="btn-reset" id="btnReset" onclick="resetAll()">↺ Reset</button>
+    <div class="mode-toggle">
+      <button class="mode-btn active" onclick="switchMode('FR')" id="btnFR">France · SACEM</button>
+      <button class="mode-btn" onclick="switchMode('INTL')" id="btnINTL">International · US/UK</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN APP LAYOUT / LEFT WORKSPACE + RIGHT SUMMARY ===== -->
+<div class="layout">
+
+  <!-- Left: holders + project -->
+  <div class="left-col">
+
+    <!-- ===== PROJECT META CARD / SONG TITLE + ARTIST ===== -->
+    <div class="project-card">
+      <div class="project-fields">
+        <input id="projectTitle" class="project-title-input" id="projectTitle" class="project-title-input" placeholder="Song title" />
+        <input id="projectArtist" class="project-artist-input" placeholder="Artist" />
+      </div>
+    </div>
+
+
+    <!-- ===== RIGHTS HOLDERS SECTION HEADER ===== -->
+    <div class="section-head">
+      <span class="section-title" id="sectionTitle">Ayants droit</span>
+    </div>
+
+    <!-- ===== DYNAMIC RIGHTS HOLDERS LIST ===== -->
+    <div id="holdersList"></div>
+
+    <!-- ===== PRIMARY ADD HOLDER CTA ===== -->
+    <button class="btn-add-holder" id="btnAddHolder" onclick="addHolder()">+ Ajouter un ayant droit</button>
+
+    <!-- ===== OPEN TRANSFER POPUP CTA ===== -->
+    <button class="btn-open-cess" id="btnOpenCess" onclick="openCessPopup()">
+      ↳ Céder à un sous-éditeur <span class="cess-badge" id="cessBadge" style="display:none">0</span>
+    </button>
+
+  </div><!-- end left-col -->
+
+  <!-- Right: summary -->
+  <div class="summary-col">
+
+<!-- ===== TRANSFER / SUB-PUBLISHER POPUP ===== -->
+<div class="cess-popup-backdrop hidden" id="cessPopupBackdrop" onclick="closeCessPopup(event)">
+  <div class="cess-popup" onclick="event.stopPropagation()">
+    <div class="cess-popup-header">
+      <div class="cess-popup-title">
+        <span class="cess-popup-title-icon">↳</span>
+        <span id="cessPopupTitleText">Céder à un sous-éditeur</span>
+      </div>
+      <button class="cess-popup-close" onclick="closeCessPopup()">×</button>
+    </div>
+    <div class="cess-popup-body" id="cessPopupBody"></div>
+    <div class="cess-popup-footer">
+      <button class="btn-add-cess" id="btnAddCess" onclick="addCessionModule()">+ Ajouter une cession</button>
+      <!-- ===== SHARED POPUP ACTIONS / CANCEL + CONFIRM ===== -->
+      <div class="popup-action-row">
+        <button class="btn-soft" onclick="cancelCessPopup()">Annuler</button>
+        <button class="btn-primary cess-confirm-btn" onclick="confirmCessPopup()">Confirmer</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="summary-label-top" id="summaryTitle">Résumé final</div>
+    <div id="summaryList"></div>
+
+    <!-- Preview bloc-note -->
+    <div class="preview-block">
+      <div class="preview-header">
+        <span class="preview-label">Preview</span>
+        <button class="preview-copy-btn" onclick="copyToClipboard()">Copy</button>
+      </div>
+      <pre class="preview-content" id="previewContent"></pre>
+    </div>
+
+  </div><!-- end summary-col -->
+
+</div><!-- end layout -->
+
+<!-- ===== RIGHTS HOLDER EDIT MODAL ===== -->
+<div class="modal-backdrop hidden" id="modalBackdrop" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-header-title">
+        <span class="modal-header-icon">✎</span>
+        <span id="modalHeaderText">Ayant droit</span>
+      </div>
+      <button class="modal-header-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="identity-block">
+        <input id="modalName" class="modal-name-input" placeholder="Rights holder name" />
+        <div class="pct-row" id="pctRow"></div>
+        <div class="modal-bar" id="modalBar">
+          <div class="bar-seg bar-author" id="barAuthor" style="width:0%"></div>
+          <div class="bar-seg bar-composer" id="barComposer" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="modal-pub-section" id="pubRows"></div>
+      <button class="btn-add-pub" onclick="addPub()" id="btnAddPub">+ Add a publisher</button>
+    </div>
+    <!-- ===== STANDARD MODAL ACTIONS / CANCEL + CONFIRM ===== -->
+    <div class="modal-footer">
+      <button class="btn-soft" onclick="closeModal()">Annuler</button>
+      <button class="btn-primary" onclick="saveHolder()">Valider</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TOAST FEEDBACK LAYER ===== -->
+<div class="toast hidden" id="toast"></div>
+
+<script>
+// ===== GLOBAL APP STATE =====
+// Notes:
+// - mode persists the current calculation model (FR / INTL)
+// - editingId tells the modal which holder is currently being edited
+// - draft is the temporary holder object used inside the modal before saving
+// - holders is the source of truth for every calculation, preview, and transfer rule
+// ─── State ──────────────────────────────────────────────────────────────────
+let mode = 'FR'
+let editingId = null
+let draft = null
+
+const genId = () => Math.random().toString(36).slice(2) + Date.now().toString(36)
+const san = v => { const n = Number(v); return isNaN(n) || n < 0 ? 0 : Math.round(n * 100) / 100 }
+const initials = name => toTitleCase(name).trim().split(/\s+/).slice(0,2).map(w => w[0]?.toUpperCase() || '').join('') || '?'
+const fmt = n => { const v = san(n); return Number.isInteger(v) ? String(v) : v.toFixed(2).replace(/\.?0+$/, '') }
+const barW = (pct, max) => `${Math.max(0, Math.min(100, san(pct) / max * 100))}%`
+
+let holders = []
+
+// ===== CALCULATION HELPERS =====
+// - These functions must stay deterministic.
+// - Any percentage sanitizing goes through san().
+// - Publisher breakdown is derived from holder data + transfer data.
+// ─── Calculations ────────────────────────────────────────────────────────────
+const getAuthorTotal  = () => Math.round(holders.reduce((s,h) => s + san(h.authorPct), 0) * 100) / 100
+const getComposerTotal = () => Math.round(holders.reduce((s,h) => s + san(h.composerPct), 0) * 100) / 100
+const getWriterTotal  = () => Math.round(holders.reduce((s,h) => s + san(h.writerPct), 0) * 100) / 100
+
+function getHolderPublisherBreakdown(holder, baseShare) {
+  const cessions = holder.cessions || []
+  return (holder.publishers || []).reduce((acc, p) => {
+    const name = (p.name || '').trim()
+    if (!name) return acc
+
+    const gross = Math.round((san(p.pct) / 100 * san(baseShare)) * 100) / 100
+    let remaining = gross
+    const transfers = []
+
+    cessions
+      .filter(c =>
+        c &&
+        c.parentPubId &&
+        c.parentPubId === p.id &&
+        (c.beneficiary || '').trim() &&
+        san(c.value) > 0
+      )
+      .forEach(c => {
+        const desired = c.mode === 'points'
+          ? san(c.value)
+          : Math.round(gross * san(c.value) / 100 * 100) / 100
+        const taken = Math.max(0, Math.min(remaining, desired))
+        if (taken <= 0) return
+        remaining = Math.round((remaining - taken) * 100) / 100
+        transfers.push({ beneficiary: c.beneficiary.trim(), pct: taken })
+      })
+
+    acc.push({ id: p.id, name, gross, net: remaining, transfers })
+    return acc
+  }, [])
+}
+
+function getHolderPublisherMap(holder, baseShare) {
+  const map = new Map()
+  getHolderPublisherBreakdown(holder, baseShare).forEach(pub => {
+    if (pub.net > 0) map.set(pub.name, Math.round(((map.get(pub.name) || 0) + pub.net) * 100) / 100)
+    pub.transfers.forEach(t => {
+      map.set(t.beneficiary, Math.round(((map.get(t.beneficiary) || 0) + t.pct) * 100) / 100)
+    })
+  })
+  return map
+}
+
+const getPubTotal = () => {
+  const total = holders.reduce((sum, h) => {
+    const baseShare = mode === 'FR'
+      ? Math.round((san(h.authorPct) + san(h.composerPct)) * 100) / 100
+      : san(h.writerPct)
+    const holderTotal = [...getHolderPublisherMap(h, baseShare).values()].reduce((s, v) => s + san(v), 0)
+    return sum + holderTotal
+  }, 0)
+  return Math.round(total * 100) / 100
+}
+
+function buildFrSummary() {
+  const authorLines   = holders.filter(h => h.authorPct   > 0).map(h => ({ name: h.name, pct: h.authorPct }))
+  const composerLines = holders.filter(h => h.composerPct > 0).map(h => ({ name: h.name, pct: h.composerPct }))
+  const pubMap = new Map()
+
+  holders.forEach(h => {
+    const holderShare = Math.round((san(h.authorPct) + san(h.composerPct)) * 100) / 100
+    getHolderPublisherMap(h, holderShare).forEach((pct, name) => {
+      pubMap.set(name, Math.round(((pubMap.get(name) || 0) + pct) * 100) / 100)
+    })
+  })
+
+  const pubLines = [...pubMap.entries()].map(([name, pct]) => ({ name, pct: Math.round(pct * 100) / 100 })).sort((a,b) => b.pct - a.pct)
+  return [
+    { label: 'Auteurs',      lines: authorLines,   total: getAuthorTotal(),   target: 25, color: '#6f7cff' },
+    { label: 'Compositeurs', lines: composerLines, total: getComposerTotal(), target: 25, color: '#8d6bff' },
+    { label: 'Éditeurs',     lines: pubLines,      total: getPubTotal(),      target: 50, color: '#37d58a' },
+  ]
+}
+
+function buildIntlSummary() {
+  const writerLines = holders.filter(h => h.writerPct > 0).map(h => ({ name: h.name, pct: h.writerPct }))
+  const writerTotal = Math.round(holders.reduce((s,h) => s + san(h.writerPct), 0) * 100) / 100
+  const pubMap = new Map()
+
+  holders.forEach(h => {
+    const holderWriterPct = san(h.writerPct)
+    getHolderPublisherMap(h, holderWriterPct).forEach((pct, name) => {
+      pubMap.set(name, Math.round(((pubMap.get(name) || 0) + pct) * 100) / 100)
+    })
+  })
+
+  const pubLines = [...pubMap.entries()].map(([name, pct]) => ({ name, pct: Math.round(pct * 100) / 100 })).sort((a,b) => b.pct - a.pct)
+  const pubTotal = Math.round([...pubMap.values()].reduce((s,v) => s+v, 0) * 100) / 100
+
+  return [
+    { label: 'Writers',    lines: writerLines, total: writerTotal, target: 100, color: '#6f7cff' },
+    { label: 'Publishers', lines: pubLines,    total: pubTotal,    target: 100, color: '#37d58a' },
+  ]
+}
+
+// ─── Mode switch ─────────────────────────────────────────────────────────────
+// ===== MODE SWITCHING + LANGUAGE TEXT UPDATES =====
+function switchMode(next, force = false) {
+  const prevMode = mode
+  if (next === mode && !force) return
+  if (next === 'INTL' && prevMode !== 'INTL') {
+    // Each holder's writerPct = authorPct + composerPct (raw points)
+    // Then normalize the whole writers pool to 100%
+    const rawWriterTotal = holders.reduce((s,h) => s + san(h.authorPct + h.composerPct), 0)
+    // Normalize publishers pool to 100% per holder
+    holders = holders.map(h => {
+      const rawWriter = san(h.authorPct + h.composerPct)
+      const writerPct = rawWriterTotal > 0 ? Math.round((rawWriter / rawWriterTotal) * 10000) / 100 : 0
+      // Normalize publisher pcts to 100% per holder
+      const pubTotal = h.publishers.reduce((s,p) => s + san(p.pct), 0)
+      const publishers = pubTotal > 0
+        ? h.publishers.map(p => ({ ...p, pct: Math.round((san(p.pct) / pubTotal) * 10000) / 100 }))
+        : h.publishers.map(p => ({ ...p }))
+      return {
+        ...h,
+        writerPct,
+        frMemory: { authorPct: h.authorPct, composerPct: h.composerPct },
+        publishers,
+        frPubMemory: h.publishers.map(p => ({ ...p }))
+      }
+    })
+  } else if (prevMode !== 'FR') {
+    // Restore from FR memory
+    holders = holders.map(h => {
+      const hasMemory = h.frMemory.authorPct > 0 || h.frMemory.composerPct > 0
+      const publishers = (h.frPubMemory && h.frPubMemory.length)
+        ? h.frPubMemory.map(p => ({ ...p }))
+        : h.publishers.map(p => ({ ...p }))
+      return {
+        ...h,
+        authorPct:   hasMemory ? h.frMemory.authorPct   : h.writerPct,
+        composerPct: hasMemory ? h.frMemory.composerPct : 0,
+        publishers,
+      }
+    })
+  }
+  mode = next
+  document.getElementById('btnFR').classList.toggle('active', mode === 'FR')
+  document.getElementById('btnINTL').classList.toggle('active', mode === 'INTL')
+  document.getElementById('sectionTitle').textContent = mode === 'FR' ? 'Ayants droit' : 'Rights Holders'
+  document.getElementById('summaryTitle').textContent = mode === 'FR' ? 'Résumé final' : 'Final Summary'
+  const btnReset = document.getElementById('btnReset')
+  if (btnReset) btnReset.textContent = mode === 'FR' ? '↺ Réinitialiser' : '↺ Reset'
+  const btnOpenCess = document.getElementById('btnOpenCess')
+  if (btnOpenCess) {
+    const badge = document.getElementById('cessBadge')
+    const badgeHtml = badge ? badge.outerHTML : '<span class="cess-badge" id="cessBadge" style="display:none">0</span>'
+    btnOpenCess.innerHTML = (mode === 'FR' ? '↳ Céder à un sous-éditeur ' : '↳ Assign to a sub-publisher ') + badgeHtml
+  }
+  document.getElementById('btnAddHolder').textContent = mode === 'FR' ? '+ Ajouter un ayant droit' : '+ Add a rights holder'
+  document.getElementById('projectTitle').placeholder = mode === 'FR' ? 'Titre de l\'œuvre' : 'Song title'
+  document.getElementById('projectArtist').placeholder = mode === 'FR' ? 'Artiste' : 'Artist'
+  document.getElementById('modalName').placeholder = mode === 'FR' ? 'Nom de l\'ayant droit' : 'Rights holder name'
+  const previewLabel = document.querySelector('.preview-label')
+  if (previewLabel) previewLabel.textContent = mode === 'FR' ? 'Aperçu' : 'Preview'
+  const previewCopyBtn = document.querySelector('.preview-copy-btn')
+  if (previewCopyBtn) previewCopyBtn.textContent = mode === 'FR' ? 'Copier' : 'Copy'
+  const btnAddPub = document.getElementById('btnAddPub')
+  if (btnAddPub) btnAddPub.textContent = mode === 'FR' ? '+ Ajouter un éditeur' : '+ Add a publisher'
+  const pctLabel = document.getElementById('pctLabel')
+  if (pctLabel) pctLabel.textContent = mode === 'FR' ? 'Répartition' : 'Split'
+  const pubLabel = document.getElementById('pubLabel')
+  if (pubLabel) pubLabel.textContent = mode === 'FR' ? 'Éditeurs' : 'Publishers'
+  const cancelBtns = document.querySelectorAll('.btn-soft')
+  cancelBtns.forEach(b => b.textContent = mode === 'FR' ? 'Annuler' : 'Cancel')
+  const confirmBtns = document.querySelectorAll('.btn-primary')
+  confirmBtns.forEach(b => b.textContent = mode === 'FR' ? 'Valider' : 'Confirm')
+  saveToStorage()
+  renderAll()
+}
+
+// ─── Render holders ──────────────────────────────────────────────────────────
+// ===== MAIN HOLDER LIST RENDERER =====
+function renderHolders() {
+  const el = document.getElementById('holdersList')
+  if (!holders.length) { el.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:8px 0;">${mode==='FR'?'Aucun ayant droit.':'No rights holders yet.'}</div>`; return }
+  el.innerHTML = holders.map(h => {
+    const aPct = san(h.authorPct), cPct = san(h.composerPct), wPct = san(h.writerPct)
+    const pills = mode === 'FR'
+      ? `${aPct > 0 ? `<div class="pill pill-author"><span class="pill-dot"></span>Auteur ${fmt(aPct)}%</div>` : ''}
+         ${cPct > 0 ? `<div class="pill pill-composer"><span class="pill-dot"></span>Compo ${fmt(cPct)}%</div>` : ''}`
+      : `${wPct > 0 ? `<div class="pill pill-writer"><span class="pill-dot"></span>Writer ${fmt(wPct)}%</div>` : ''}`
+    // Bar: author+composer share a 100% track representing the 50% A+C pool
+    // authorPct/50 = its share of the bar, composerPct/50 = its share
+    const barHtml = mode === 'FR'
+      ? `<div class="bar-seg bar-author" style="width:${barW(aPct,50)}"></div>
+         <div class="bar-seg bar-composer" style="width:${barW(cPct,50)}"></div>`
+      : `<div class="bar-seg bar-writer" style="width:${barW(wPct,100)}"></div>`
+    const holderBase = mode === 'FR'
+      ? Math.round((san(h.authorPct) + san(h.composerPct)) * 100) / 100
+      : san(h.writerPct)
+    const pubChips = getHolderPublisherBreakdown(h, holderBase).map(pub => {
+      const cededChips = pub.transfers.map(t => {
+        return `<span class="pub-chip" style="border-color:rgba(141,107,255,0.2);background:rgba(141,107,255,0.07);">
+          ↳ ${toTitleCase(t.beneficiary)} <strong style="color:#8d6bff">${fmt(t.pct)}%</strong>
+        </span>`
+      }).join('')
+      const displayPct = pub.transfers.length ? pub.net : pub.gross
+      return `<span class="pub-chip">${toTitleCase(pub.name)} <strong>${fmt(displayPct)}%</strong></span>${cededChips}`
+    }).join('')
+    return `
+      <div class="holder-card">
+        <div class="holder-top">
+          <div class="holder-identity">
+            <div class="avatar">${initials(h.name || '?')}</div>
+            <div>
+              <div class="holder-name">${h.name || 'Sans nom'}</div>
+            </div>
+          </div>
+          <div class="holder-actions">
+            <button class="btn-primary btn-edit-holder" data-id="${h.id}">Modifier</button>
+            <button class="btn-del btn-del-holder" data-id="${h.id}">×</button>
+          </div>
+        </div>
+        <div class="holder-body">
+          <div class="pill-row">${pills}</div>
+          <div class="bar">${barHtml}</div>
+          ${pubChips ? `<div class="pub-chips">${pubChips}</div>` : ''}
+        </div>
+      </div>`
+  }).join('')
+
+  el.querySelectorAll('.btn-edit-holder').forEach(btn => {
+    btn.addEventListener('click', () => openEdit(btn.dataset.id))
+  })
+  el.querySelectorAll('.btn-del-holder').forEach(btn => {
+    btn.addEventListener('click', () => deleteHolder(btn.dataset.id))
+  })
+}
+
+// ─── Render summary ──────────────────────────────────────────────────────────
+// ===== RIGHT COLUMN SUMMARY RENDERER =====
+function renderSummary() {
+  const sections = mode === 'FR' ? buildFrSummary() : buildIntlSummary()
+  const el = document.getElementById('summaryList')
+  el.innerHTML = sections.map(sec => {
+    const ok   = sec.target !== null && sec.total !== null && Math.abs(sec.total - sec.target) < 0.01
+    const over = sec.target !== null && sec.total !== null && sec.total > sec.target
+    const dotBg = (sec.target === null || sec.total === null) ? 'rgba(255,255,255,0.2)' : ok ? '#37d58a' : over ? '#ff5f7e' : '#ffc847'
+    const dotGlow = ok ? `box-shadow:0 0 5px rgba(55,213,138,.6)` : ''
+    const totalCls = (sec.target === null || sec.total === null) ? '' : ok ? 'total-ok' : over ? 'total-over' : 'total-warn'
+    const totalStr = sec.total === null ? '—' : sec.target !== null ? `${fmt(sec.total)}% / ${sec.target}%` : `${fmt(sec.total)}%`
+    const rows = sec.lines.length
+      ? sec.lines.map(l => `<div class="sum-row"><span class="sum-name">${toTitleCase(l.name)}</span><span class="sum-val" style="color:${sec.color}">${fmt(l.pct)}%</span></div>`).join('')
+      : `<div class="sum-empty">—</div>`
+    return `
+      <div class="sum-section" style="background:${sec.color}08;border-color:${sec.color}18">
+        <div class="sum-header">
+          <span class="sum-section-title" style="color:${sec.color}">${sec.label}</span>
+          <span class="sum-dot" style="background:${dotBg};${dotGlow}"></span>
+        </div>
+        <div class="sum-rows">${rows}</div>
+        <div class="sum-total">
+          <span class="sum-total-label">Total</span>
+          <span class="${totalCls}">${totalStr}</span>
+        </div>
+      </div>`
+  }).join('')
+}
+
+// ===== MASTER UI REFRESH =====
+function renderAll() { renderHolders(); renderSummary(); renderPreview(); updateCessBadge() }
+
+// Auto-save on every render
+
+// Auto-save project fields on input
+document.addEventListener('input', e => {
+  if (['projectTitle','projectArtist','projectNotes'].includes(e.target.id)) {
+    saveToStorage()
+    if (e.target.id !== 'projectNotes') renderPreview()
+  }
+})
+
+
+// ─── Toast ───────────────────────────────────────────────────────────────────
+// ===== TOAST / QUICK USER FEEDBACK =====
+function showToast(msg) {
+  const el = document.getElementById('toast')
+  el.textContent = msg
+  el.classList.remove('hidden')
+  clearTimeout(el._t)
+  el._t = setTimeout(() => el.classList.add('hidden'), 2200)
+}
+
+// ─── Modal ───────────────────────────────────────────────────────────────────
+// ===== OPEN HOLDER MODAL / LOAD HOLDER INTO DRAFT =====
+function openEdit(id) {
+  const h = holders.find(h => h.id === id)
+  if (!h) return
+  editingId = id
+  draft = { ...h, publishers: h.publishers.map(p => ({ ...p })), cessions: (h.cessions || []).map(c => ({ ...c })) }
+  document.getElementById('modalName').value = draft.name || ''
+  const headerText = document.getElementById('modalHeaderText')
+  if (headerText) headerText.textContent = mode === 'FR' ? 'Ayant droit' : 'Rights Holder'
+  renderPctRow()
+  renderPubRows()
+  updateModalBar()
+  document.getElementById('modalBackdrop').classList.remove('hidden')
+}
+
+// ===== CLOSE HOLDER MODAL =====
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modalBackdrop')) return
+  draft = null; editingId = null
+  document.getElementById('modalBackdrop').classList.add('hidden')
+}
+
+// ===== SAVE HOLDER DRAFT INTO MAIN STATE =====
+function saveHolder() {
+  if (!draft) return
+  draft.name = toTitleCase((document.getElementById('modalName').value || 'Sans nom').trim())
+  draft.publishers = (draft.publishers || []).map(p => ({ ...p, name: toTitleCase(String(p.name || '').trim()) }))
+  autoFillPublisherTotal()
+  if (draft._isNew) {
+    const cleaned = { ...draft, cessions: [], _isNew: undefined }
+    holders.push(cleaned)
+  } else {
+    // Preserve cessions from the holder (managed by cession popup)
+    const existing = holders.find(h => h.id === editingId)
+    const currentCessions = existing ? (existing.cessions || []) : []
+    const cleaned = { ...draft, cessions: currentCessions, _isNew: undefined }
+    holders = holders.map(h => h.id === editingId ? cleaned : h)
+  }
+  document.getElementById('modalBackdrop').classList.add('hidden')
+  editingId = null; draft = null
+  renderAll()
+}
+
+// ─── Pct row ─────────────────────────────────────────────────────────────────
+function step(field, delta, max) {
+  const cur = san(draft[field])
+  const next = Math.max(0, Math.min(max, Math.round((cur + delta) * 100) / 100))
+  draft[field] = next
+  const input = document.getElementById('input_' + field)
+  if (input) input.value = next || ''
+  updateModalBar()
+  autoFillPublisherTotal()
+  renderPubRows()
+}
+
+// ===== MODAL SPLIT PILL RENDERER =====
+function renderPctRow() {
+  const el = document.getElementById('pctRow')
+  const pill = (label, field, max) => `
+    <div class="pct-pill author-blue">
+      <span class="pct-label">${label}</span>
+      <input type="number" class="pct-input" id="input_${field}" min="0" max="${max}" step="0.25"
+        value="${draft[field] || ''}" placeholder="0"
+        oninput="draft['${field}']=san(this.value);updateModalBar();autoFillPublisherTotal();renderPubRows()"/>
+      <span class="pct-unit">%</span>
+      <div class="pct-stepper">
+        <button class="pct-step-btn" onclick="step('${field}', 0.25, ${max})">▲</button>
+        <button class="pct-step-btn" onclick="step('${field}', -0.25, ${max})">▼</button>
+      </div>
+    </div>`
+  if (mode === 'FR') {
+    el.innerHTML = pill('Auteur', 'authorPct', 25) + pill('Compo', 'composerPct', 25)
+  } else {
+    el.innerHTML = pill('Writer', 'writerPct', 100)
+  }
+}
+
+// ===== MODAL VISUAL BAR / AUTHOR VS COMPOSER DISTRIBUTION =====
+function updateModalBar() {
+  if (!draft) return
+  const bar = document.getElementById('modalBar')
+  if (mode === 'FR') {
+    bar.innerHTML = `<div class="bar-seg bar-author" style="width:${barW(draft.authorPct,25)}"></div>
+      <div class="bar-seg bar-composer" style="width:${barW(draft.composerPct,25)}"></div>`
+  } else {
+    bar.innerHTML = `<div class="bar-seg bar-writer" style="width:${barW(draft.writerPct,50)}"></div>`
+  }
+}
+
+// ─── Publisher rows ───────────────────────────────────────────────────────────
+// ===== PUBLISHER ROWS RENDERER =====
+// Notes:
+// - Manual mode highlights fields edited by the user.
+// - Publisher order is preserved after additions/removals.
+function renderPubRows() {
+  const el = document.getElementById('pubRows')
+  if (!el || !draft) return
+
+  el.innerHTML = (draft.publishers || []).map(p => {
+    const manualClass = p.manual ? ' is-manual' : ''
+    return `<div class="pub-row-wrapper${manualClass}" data-pub="${p.id}">
+      <div class="pub-row">
+        <div class="pub-name-pill">
+          <span class="pub-name-dot"></span>
+          <input class="pub-name-input" placeholder="${mode==='FR'?'Nom éditeur':'Publisher name'}"
+            value="${p.name}" oninput="updatePub('${p.id}','name',this.value,false); renderAll()"/>
+        </div>
+        <div class="pub-pct-wrap${p.manual ? ' manual-active' : ''}">
+          <input type="number" class="pub-pct-input${p.manual ? ' manual' : ''}" data-pubid="${p.id}" min="0" max="100" step="0.25"
+            value="${p.manual ? (p.pctRaw ?? '') : (p.pct || '')}" placeholder="0"
+            oninput="updatePub('${p.id}','pct',this.value,true)"
+            onblur="commitPubPct('${p.id}', this.value)"
+            onchange="commitPubPct('${p.id}', this.value)"/>
+          <div class="pub-stepper">
+            <button type="button" class="pub-step-btn" data-pubid="${p.id}" data-delta="0.25">▲</button>
+            <button type="button" class="pub-step-btn" data-pubid="${p.id}" data-delta="-0.25">▼</button>
+          </div>
+        </div>
+        <span class="pub-unit">%</span>
+        <button type="button" class="btn-remove-pub" onclick="removePub('${p.id}')">×</button>
+      </div>
+    </div>`
+  }).join('')
+
+  el.querySelectorAll('.pub-step-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pubId = btn.dataset.pubid
+      const delta = parseFloat(btn.dataset.delta)
+      const p = draft.publishers.find(p => p.id === pubId)
+      if (!p) return
+      p.manual = true
+      const next = Math.max(0, Math.min(100, Math.round((san(p.pctRaw !== '' ? p.pctRaw : p.pct) + delta) * 100) / 100))
+      p.pct = next
+      p.pctRaw = String(next)
+      rebalanceDraftPublishers()
+      renderPubRows()
+      renderAll()
+    })
+  })
+}
+
+// ===== PUBLISHER FIELD UPDATE HANDLER =====
+function updatePub(id, field, val, manual = false) {
+  const p = draft.publishers.find(p => p.id === id)
+  if (!p) return
+
+  if (field === 'pct') {
+    p.pctRaw = String(val ?? '')
+    if (String(val ?? '').trim() === '') {
+      p.manual = false
+    } else {
+      p.manual = !!manual
+    }
+    return
+  }
+
+  p[field] = val
+}
+
+// ===== ADD PUBLISHER ROW =====
+function addPub() {
+  if (!draft.publishers) draft.publishers = []
+  draft.publishers.push({ id: genId(), name: '', pct: 0, manual: false, pctRaw: '' })
+  rebalanceDraftPublishers()
+  renderPubRows()
+  renderAll()
+}
+
+// ===== REMOVE PUBLISHER ROW =====
+function removePub(id) {
+  draft.publishers = (draft.publishers || []).filter(p => p.id !== id)
+  rebalanceDraftPublishers()
+  renderPubRows()
+  renderAll()
+}
+
+// ─── Cession popup module ─────────────────────────────────────────────────────
+function getAllPublishers() {
+  const pubs = []
+  holders.forEach(h => {
+    h.publishers.forEach(p => {
+      if (p.name.trim()) pubs.push({ pubId: p.id, pubName: toTitleCase(p.name), holderId: h.id, holderName: toTitleCase(h.name || 'Sans nom') })
+    })
+  })
+  return pubs
+}
+
+
+// ===== CESSION ORDER HELPERS =====
+function getMaxCessionOrder() {
+  let maxOrder = 0
+  holders.forEach(h => {
+    ;(h.cessions || []).forEach(c => {
+      const n = Number(c.sortOrder || 0)
+      if (Number.isFinite(n) && n > maxOrder) maxOrder = n
+    })
+  })
+  return maxOrder
+}
+
+function nextCessionOrder() {
+  return getMaxCessionOrder() + 1
+}
+
+function normalizeCessionOrders() {
+  let nextOrder = getMaxCessionOrder() + 1
+  holders.forEach(h => {
+    ;(h.cessions || []).forEach(c => {
+      const n = Number(c.sortOrder || 0)
+      if (!Number.isFinite(n) || n <= 0) {
+        c.sortOrder = nextOrder++
+      }
+    })
+  })
+}
+
+function getAllCessions() {
+  const all = []
+  holders.forEach(h => {
+    (h.cessions || []).forEach(c => all.push({ ...c, holderId: h.id }))
+  })
+  return all
+}
+
+// ===== TRANSFER POPUP SNAPSHOT =====
+// Keeps a safe copy so cancel can revert every transfer change.
+let cessSnapshot = null // backup of all holders' cessions before opening
+
+// ===== OPEN TRANSFER POPUP =====
+function openCessPopup() {
+  // Snapshot all cessions for cancel
+  cessSnapshot = holders.map(h => ({ id: h.id, cessions: (h.cessions || []).map(c => ({ ...c })) }))
+  renderCessionsPopup()
+  document.getElementById('cessPopupBackdrop').classList.remove('hidden')
+}
+
+// ===== CLOSE TRANSFER POPUP =====
+function closeCessPopup(e) {
+  if (e && e.target !== document.getElementById('cessPopupBackdrop')) return
+  cancelCessPopup()
+}
+
+// ===== CANCEL TRANSFER POPUP / RESTORE SNAPSHOT =====
+function cancelCessPopup() {
+  // Restore snapshot
+  if (cessSnapshot) {
+    cessSnapshot.forEach(snap => {
+      const h = holders.find(h => h.id === snap.id)
+      if (h) h.cessions = snap.cessions
+    })
+    cessSnapshot = null
+  }
+  document.getElementById('cessPopupBackdrop').classList.add('hidden')
+  renderAll()
+}
+
+// ===== CONFIRM TRANSFER POPUP / COMMIT CURRENT ORDERS =====
+function confirmCessPopup() {
+  cessSnapshot = null // discard snapshot, keep changes
+  document.getElementById('cessPopupBackdrop').classList.add('hidden')
+  renderAll()
+}
+
+// ===== ADD TRANSFER MODULE =====
+// Notes:
+// - New rows must always appear in stable order.
+// - nextCessionOrder() guarantees visual consistency.
+function addCessionModule() {
+  const pubs = getAllPublishers()
+  if (!pubs.length) {
+    showToast(mode === 'FR' ? 'Ajoutez d\'abord un éditeur' : 'Add a publisher first')
+    return
+  }
+  const firstHolder = holders.find(h => (h.publishers || []).some(p => (p.name || '').trim()))
+  if (!firstHolder) return
+  if (!firstHolder.cessions) firstHolder.cessions = []
+  firstHolder.cessions.push({ id: genId(), parentPubId: '', beneficiary: '', mode: 'percent', value: 0, sortOrder: getMaxCessionOrder() + 1 })
+  renderCessionsPopup()
+}
+
+// ===== UPDATE TRANSFER MODULE FIELDS =====
+function updateCessionModule(holderId, cessId, field, val) {
+  const h = holders.find(h => h.id === holderId)
+  if (!h) return
+  const c = (h.cessions || []).find(c => c.id === cessId)
+  if (!c) return
+
+  if (field === 'value') {
+    c.value = san(val)
+    return
+  }
+
+  if (field === 'beneficiary') {
+    c.beneficiary = toTitleCase(val)
+    return
+  }
+
+  if (field === 'parentPubId') {
+    if (!val) {
+      c.parentPubId = ''
+      renderCessionsPopup()
+      return
+    }
+
+    const pubs = getAllPublishers()
+    const newPub = pubs.find(p => p.pubId === val)
+    if (!newPub) {
+      c.parentPubId = ''
+      renderCessionsPopup()
+      return
+    }
+
+    if (newPub.holderId !== holderId) {
+      h.cessions = h.cessions.filter(x => x.id !== cessId)
+      c.parentPubId = val
+      const newHolder = holders.find(x => x.id === newPub.holderId)
+      if (!newHolder.cessions) newHolder.cessions = []
+      newHolder.cessions.push(c)
+    } else {
+      c.parentPubId = val
+    }
+    renderCessionsPopup()
+    return
+  }
+
+  if (field === 'mode') {
+    c.mode = val
+    renderCessionsPopup()
+    return
+  }
+
+  c[field] = val
+}
+
+// ===== REMOVE TRANSFER MODULE =====
+function removeCessionModule(holderId, cessId) {
+  const h = holders.find(h => h.id === holderId)
+  if (!h) return
+  h.cessions = (h.cessions || []).filter(c => c.id !== cessId)
+  renderCessionsPopup()
+}
+
+// ===== TRANSFER POPUP RENDERER =====
+// Notes:
+// - Empty states depend on publisher availability.
+// - Cards are sorted by explicit order to avoid visual disorder.
+function renderCessionsPopup() {
+  const el = document.getElementById('cessPopupBody')
+  if (!el) return
+
+  const pubs = getAllPublishers()
+  const allCessions = getAllCessions()
+    .slice()
+    .sort((a, b) => Number(a.sortOrder || 0) - Number(b.sortOrder || 0))
+
+  const titleEl = document.getElementById('cessPopupTitleText')
+  if (titleEl) titleEl.textContent = mode === 'FR' ? 'Céder à un sous-éditeur' : 'Transfer to sub-publisher'
+
+  const addBtn = document.getElementById('btnAddCess')
+  if (addBtn) addBtn.textContent = mode === 'FR' ? '+ Ajouter une cession' : '+ Add a transfer'
+
+  if (!pubs.length) {
+    el.innerHTML = `<div class="cess-popup-empty">${mode === 'FR' ? 'Ajoutez des éditeurs pour pouvoir céder des parts.' : 'Add publishers to enable transfers.'}</div>`
+    return
+  }
+
+  if (!allCessions.length) {
+    el.innerHTML = `<div class="cess-popup-empty">${mode === 'FR' ? 'Aucune cession pour le moment.' : 'No transfers yet.'}</div>`
+    return
+  }
+
+  const uniquePubNames = [...new Set(pubs.map(p => p.pubName))]
+  const datalistId = 'cessBeneSuggestions'
+  const datalistHtml = `<datalist id="${datalistId}">${uniquePubNames.map(n => `<option value="${n}">`).join('')}</datalist>`
+
+  el.innerHTML = datalistHtml + allCessions.map(c => {
+    const pubOpts = [`<option value=""${!c.parentPubId ? ' selected' : ''}></option>`]
+      .concat(
+        pubs.map(p => `<option value="${p.pubId}"${p.pubId === c.parentPubId ? ' selected' : ''}>${toTitleCase(p.pubName)}</option>`)
+      )
+      .join('')
+
+    return `<div class="cess-card">
+      <div class="cess-source-pill">
+        <span class="cess-source-dot"></span>
+        <select class="cess-source-select" onchange="updateCessionModule('${c.holderId}','${c.id}','parentPubId',this.value)">
+          ${pubOpts}
+        </select>
+      </div>
+      <span class="cess-arrow">↳</span>
+      <div class="cess-bene-pill">
+        <span class="cess-bene-dot"></span>
+        <input class="cess-bene-input" list="${datalistId}" placeholder="${mode === 'FR' ? 'Sous-éditeur' : 'Sub-publisher'}"
+          value="${toTitleCase(c.beneficiary || '')}"
+          oninput="updateCessionModule('${c.holderId}','${c.id}','beneficiary',this.value)"/>
+      </div>
+      <div class="cess-val-group">
+        <select class="cess-mode-select" onchange="updateCessionModule('${c.holderId}','${c.id}','mode',this.value)">
+          <option value="percent"${c.mode === 'percent' ? ' selected' : ''}>%</option>
+          <option value="points"${c.mode === 'points' ? ' selected' : ''}>pts</option>
+        </select>
+        <input type="number" class="cess-val-input" min="0" step="0.01"
+          value="${c.value || ''}" placeholder="0"
+          oninput="updateCessionModule('${c.holderId}','${c.id}','value',this.value)"/>
+        <span class="cess-val-unit">${c.mode === 'points' ? 'pts' : '%'}</span>
+      </div>
+      <button class="btn-remove-cess" onclick="removeCessionModule('${c.holderId}','${c.id}')">×</button>
+    </div>`
+  }).join('')
+}
+
+// ===== TRANSFER BADGE COUNTER =====
+function updateCessBadge() {
+  const badge = document.getElementById('cessBadge')
+  const btn = document.getElementById('btnOpenCess')
+  if (!badge || !btn) return
+  const count = getAllCessions().length
+  badge.textContent = count
+  badge.style.display = count > 0 ? 'inline' : 'none'
+  // Update button text for mode
+  const label = mode === 'FR' ? '↳ Céder à un sous-éditeur ' : '↳ Transfer to sub-publisher '
+  btn.innerHTML = label + `<span class="cess-badge" id="cessBadge"${count > 0 ? '' : ' style="display:none"'}>${count}</span>`
+}
+
+// Keep old function names as no-ops
+function addCession() {}
+function updateCession() {}
+function removeCession() {}
+
+// ─── autoFill ─────────────────────────────────────────────────────────────────
+function autoFillPublisherTotal() {
+  if (!draft || !draft.publishers || !draft.publishers.length) return
+  rebalanceDraftPublishers()
+}
+
+// ─── Add / delete holder ──────────────────────────────────────────────────────
+// ===== CREATE NEW HOLDER DRAFT =====
+function addHolder() {
+  const h = { id: genId(), name: '', authorPct: 0, composerPct: 0, writerPct: 0,
+    frMemory: { authorPct: 0, composerPct: 0 }, publishers: [], cessions: [], _isNew: true }
+  editingId = h.id
+  draft = { ...h }
+  document.getElementById('modalName').value = ''
+  const headerText = document.getElementById('modalHeaderText')
+  if (headerText) headerText.textContent = mode === 'FR' ? 'Nouvel ayant droit' : 'New Rights Holder'
+  renderPctRow(); renderPubRows(); updateModalBar()
+  document.getElementById('modalBackdrop').classList.remove('hidden')
+}
+
+// ===== DELETE HOLDER =====
+function deleteHolder(id) {
+  const h = holders.find(h => h.id === id)
+  document.getElementById('deletePopupTitle').textContent = mode==='FR' ? `Supprimer ${h?.name || 'cet ayant droit'} ?` : `Delete ${h?.name || 'this rights holder'}?`
+  document.getElementById('deletePopup').classList.remove('hidden')
+  document.getElementById('deletePopupConfirm').onclick = () => {
+    holders = holders.filter(h => h.id !== id)
+    document.getElementById('deletePopup').classList.add('hidden')
+    renderAll()
+  }
+}
+
+// ─── Reset ────────────────────────────────────────────────────────────────────
+// ===== APP RESET ENTRY POINT =====
+function resetAll() {
+  document.getElementById('resetPopup').classList.remove('hidden')
+}
+
+// ===== HARD RESET / CLEAR ALL LOCAL DATA =====
+function confirmReset() {
+  const currentMode = mode
+  holders = []
+  mode = currentMode
+  projectData = { title: '', artist: '', notes: '' }
+  editingId = null
+  draft = null
+
+  try {
+    localStorage.setItem(MODE_KEY, currentMode)
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ holders: [], mode: currentMode, projectData }))
+  } catch(e) {}
+
+  document.getElementById('resetPopup').classList.add('hidden')
+  applyLoadedData()
+  renderAll()
+}
+
+
+// ===== INPUT NORMALIZATION / FIRST LETTER ONLY UTILITY =====
+function toTitleCase(str) {
+  const value = String(str || '')
+  if (!value) return ''
+
+  const trimmed = value.trim()
+  if (!trimmed) return ''
+
+  const shortAcronym = /^[a-zA-Z0-9&.+-]{2,4}$/.test(trimmed) && !/\s/.test(trimmed)
+  if (shortAcronym) {
+    return trimmed.toUpperCase()
+  }
+
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1)
+}
+
+function sortPublishersDesc(pubs) {
+  return [...(pubs || [])].sort((a, b) => (Number(b?.pct) || 0) - (Number(a?.pct) || 0))
+}
+
+function distributeRemainingCents(totalPct, count) {
+  const totalCents = Math.max(0, Math.round(san(totalPct) * 100))
+  if (!count) return []
+  const base = Math.floor(totalCents / count)
+  const remainder = totalCents % count
+  return Array.from({ length: count }, (_, i) => (base + (i < remainder ? 1 : 0)) / 100)
+}
+
+
+function maybeReturnPublisherToAuto(p) {
+  if (!p) return
+  const value = String(p.pctRaw ?? '').trim()
+  if (value === '') {
+    p.manual = false
+    p.pct = 0
+    p.pctRaw = ''
+  }
+}
+
+function commitPubPct(id, raw) {
+  const p = draft.publishers.find(p => p.id === id)
+  if (!p) return
+
+  const value = String(raw ?? '')
+  p.pctRaw = value
+
+  if (value.trim() === '') {
+    p.manual = false
+    p.pct = 0
+    rebalanceDraftPublishers()
+    renderPubRows()
+    renderAll()
+    return
+  }
+
+  p.manual = true
+  p.pct = Math.max(0, Math.min(100, san(value)))
+  rebalanceDraftPublishers()
+  renderPubRows()
+  renderAll()
+}
+
+// ===== AUTO REBALANCE PUBLISHERS =====
+// Notes:
+// - Called after publisher edits to keep total coherent.
+// - Must not destroy manual values unnecessarily.
+function rebalanceDraftPublishers() {
+  if (!draft || !Array.isArray(draft.publishers)) return
+  const pubs = draft.publishers
+  if (!pubs.length) return
+
+  pubs.forEach(p => {
+    p.pct = san(p.pct)
+    p.manual = !!p.manual
+    if (typeof p.pctRaw !== 'string') p.pctRaw = p.manual ? String(p.pct || '') : ''
+  })
+
+  if (pubs.length === 1) {
+    pubs[0].pct = 100
+    if (!pubs[0].manual) pubs[0].pctRaw = ''
+    return
+  }
+
+  const locked = pubs.filter(p => p.manual)
+  const unlocked = pubs.filter(p => !p.manual)
+
+  let lockedTotal = Math.round(locked.reduce((sum, p) => sum + san(p.pct), 0) * 100) / 100
+
+  if (lockedTotal > 100) {
+    lockedTotal = 100
+    let remainingLocked = 100
+    locked.forEach((p, i) => {
+      const value = i === locked.length - 1 ? remainingLocked : Math.min(remainingLocked, san(p.pct))
+      p.pct = Math.round(value * 100) / 100
+      p.pctRaw = String(p.pct)
+      remainingLocked = Math.round((remainingLocked - p.pct) * 100) / 100
+    })
+  }
+
+  const remaining = Math.max(0, Math.round((100 - lockedTotal) * 100) / 100)
+
+  if (unlocked.length) {
+    const shares = distributeRemainingCents(remaining, unlocked.length)
+    unlocked.forEach((p, i) => {
+      p.pct = shares[i]
+      p.pctRaw = ''
+    })
+  }
+
+  locked.forEach(p => {
+    if (String(p.pctRaw ?? '').trim() === '') p.pctRaw = String(p.pct)
+  })
+}
+
+// ─── Copy / Share ─────────────────────────────────────────────────────────────
+// ===== PREVIEW / EXPORT TEXT BUILDER =====
+function buildCopyText() {
+  const title = document.getElementById('projectTitle')?.value?.trim() || ''
+  const artist = document.getElementById('projectArtist')?.value?.trim() || ''
+  const lines = []
+
+  if (title) lines.push(`${mode==='FR'?'Titre':'Title'} : ${toTitleCase(title)}`)
+  if (artist) lines.push(`${mode==='FR'?'Artiste':'Artist'} : ${toTitleCase(artist)}`)
+  if (title || artist) lines.push('')
+
+  const sorted = [...holders].sort((a, b) => {
+    const aTotal = mode === 'FR' ? san(a.authorPct) + san(a.composerPct) : san(a.writerPct)
+    const bTotal = mode === 'FR' ? san(b.authorPct) + san(b.composerPct) : san(b.writerPct)
+    return bTotal - aTotal
+  })
+
+  sorted.forEach(h => {
+    const editorShare = mode === 'FR'
+      ? Math.round((san(h.authorPct) + san(h.composerPct)) * 100) / 100
+      : san(h.writerPct)
+    const cessions = h.cessions || []
+
+    const publisherEntries = []
+
+    ;(h.publishers || []).forEach(p => {
+      if (!String(p.name || '').trim()) return
+      const realPct = Math.round((san(p.pct) / 100) * editorShare * 100) / 100
+      const publisherCessions = cessions.filter(c => c.parentPubId === p.id && c.beneficiary)
+      let taken = 0
+
+      publisherCessions.forEach(c => {
+        const t = c.mode === 'points'
+          ? san(c.value)
+          : Math.round(realPct * san(c.value) / 100 * 100) / 100
+        taken = Math.round((taken + t) * 100) / 100
+        if (t > 0) {
+          publisherEntries.push({
+            name: toTitleCase(c.beneficiary),
+            pct: t
+          })
+        }
+      })
+
+      const net = Math.max(0, Math.round((realPct - taken) * 100) / 100)
+      if (net > 0) {
+        publisherEntries.push({
+          name: toTitleCase(p.name),
+          pct: net
+        })
+      }
+    })
+
+    const sortedPublishers = sortPublishersDesc(publisherEntries)
+
+    if (mode === 'FR') {
+      if (san(h.authorPct) > 0) lines.push(`A/ ${toTitleCase(h.name)} ${fmt(h.authorPct)}%`)
+      if (san(h.composerPct) > 0) lines.push(`C/ ${toTitleCase(h.name)} ${fmt(h.composerPct)}%`)
+      if (san(h.authorPct) > 0 || san(h.composerPct) > 0) {
+        sortedPublishers.forEach(pub => lines.push(`E/ ${toTitleCase(pub.name)} ${fmt(pub.pct)}%`))
+        lines.push('')
+      }
+    } else {
+      if (san(h.writerPct) > 0) {
+        lines.push(`W/ ${toTitleCase(h.name)} ${fmt(h.writerPct)}%`)
+        sortedPublishers.forEach(pub => lines.push(`E/ ${toTitleCase(pub.name)} ${fmt(pub.pct)}%`))
+        lines.push('')
+      }
+    }
+  })
+
+  lines.push(mode==='FR'?'Généré par Easy-Splits.com':'Generated by Easy-Splits.com')
+  return lines.join('\n')
+}
+
+function copyToClipboard() {
+  const text = buildCopyText()
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(()=>showToast(mode==='FR'?'✓ Copié':'✓ Copied')).catch(()=>showToast(mode==='FR'?'Impossible de copier':'Unable to copy'))
+  } else {
+    showToast(mode==='FR'?'Copie non disponible':'Copy unavailable')
+  }
+}
+
+function shareAction() {
+  const text = buildCopyText()
+  if (navigator.share) {
+    navigator.share({ title: 'Easy Splits', text }).catch(()=>{})
+  } else if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(()=>showToast(mode==='FR'?'✓ Copié':'✓ Copied')).catch(()=>showToast(mode==='FR'?'Impossible de copier':'Unable to copy'))
+  } else {
+    showToast(mode==='FR'?'Partage non disponible':'Share unavailable')
+  }
+}
+
+// ─── Preview ──────────────────────────────────────────────────────────────────
+// ===== PREVIEW PANEL RENDERER =====
+function renderPreview() {
+  const el = document.getElementById('previewContent')
+  if (!el) return
+  el.textContent = buildCopyText()
+}
+
+// ─── In-memory project fields ─────────────────────────────────────────────────
+// ===== PROJECT META STATE =====
+let projectData = { title: '', artist: '', notes: '' }
+
+const STORAGE_KEY = 'easysplits_calculate_v2'
+const MODE_KEY = 'easysplits_calculate_mode_v1'
+const CESS_ORDER_KEY = 'easysplits_cess_order_v1'
+
+// ===== LOCAL STORAGE SAVE =====
+function saveToStorage() {
+  try {
+    const titleEl = document.getElementById('projectTitle')
+    const artistEl = document.getElementById('projectArtist')
+    const notesEl = document.getElementById('projectNotes')
+    if (titleEl) projectData.title = titleEl.value
+    if (artistEl) projectData.artist = artistEl.value
+    if (notesEl) projectData.notes = notesEl.value
+    localStorage.setItem(MODE_KEY, mode)
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ holders, mode, projectData }))
+  } catch(e) {}
+}
+
+// ===== LOCAL STORAGE LOAD =====
+function loadFromStorage() {
+  try {
+    const savedMode = localStorage.getItem(MODE_KEY)
+    if (savedMode === 'FR' || savedMode === 'INTL') mode = savedMode
+
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return false
+
+    const data = JSON.parse(raw)
+    if (Array.isArray(data.holders)) {
+      holders = data.holders.map(h => {
+        const { subtitle, _isNew, ...clean } = h
+        return clean
+      })
+      normalizeCessionOrders()
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ holders, mode, projectData })) } catch(e) {}
+    }
+    if (data.mode === 'FR' || data.mode === 'INTL') mode = data.mode
+    if (data.projectData) projectData = { ...projectData, ...data.projectData }
+    return true
+  } catch(e) {}
+  return false
+}
+
+// ===== APPLY LOADED STATE TO UI =====
+function applyLoadedData() {
+  const titleEl = document.getElementById('projectTitle')
+  const artistEl = document.getElementById('projectArtist')
+  const notesEl = document.getElementById('projectNotes')
+  if (titleEl) titleEl.value = projectData.title || ''
+  if (artistEl) artistEl.value = projectData.artist || ''
+  if (notesEl) notesEl.value = projectData.notes || ''
+  document.getElementById('btnFR').classList.toggle('active', mode === 'FR')
+  document.getElementById('btnINTL').classList.toggle('active', mode === 'INTL')
+  document.getElementById('sectionTitle').textContent = mode === 'FR' ? 'Ayants droit' : 'Rights Holders'
+  document.getElementById('summaryTitle').textContent = mode === 'FR' ? 'Résumé final' : 'Final Summary'
+  document.getElementById('btnAddHolder').textContent = mode === 'FR' ? '+ Ajouter un ayant droit' : '+ Add a rights holder'
+}
+
+// ─── Auto-save on every render ───────────────────────────────────────────────
+const _origRenderAll = renderAll
+renderAll = function() {
+  _origRenderAll()
+  saveToStorage()
+}
+
+document.addEventListener('input', e => {
+  const target = e.target
+  if (target && target.matches("input[type='text'], textarea")) {
+    const shouldTitleCase = target.classList.contains('pub-name-input') || target.id === 'projectTitle' || target.id === 'projectArtist' || target.id === 'modalName'
+    if (shouldTitleCase) {
+      const start = target.selectionStart
+      const next = toTitleCase(target.value)
+      if (next !== target.value) {
+        target.value = next
+        if (typeof start === 'number' && target.setSelectionRange) target.setSelectionRange(start, start)
+      }
+    }
+  }
+  if (['projectTitle','projectArtist','projectNotes'].includes(target.id)) saveToStorage()
+})
+
+// ─── Init ────────────────────────────────────────────────────────────────────
+loadFromStorage()
+applyLoadedData()
+switchMode(mode, true)
+
+</script>
+  <!-- Delete holder confirm popup -->
+  <div class="popup-backdrop hidden" id="deletePopup">
+    <div class="popup">
+      <div class="popup-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,95,126,0.7)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+      </div>
+      <div class="popup-title" id="deletePopupTitle">Delete this rights holder?</div>
+      <div class="popup-sub">This action cannot be undone.</div>
+      <div class="popup-actions">
+        <button class="popup-cancel" onclick="document.getElementById('deletePopup').classList.add('hidden')">Cancel</button>
+        <button class="popup-confirm" id="deletePopupConfirm">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reset confirm popup -->
+  <div class="popup-backdrop hidden" id="resetPopup">
+    <div class="popup">
+      <div class="popup-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,95,126,0.7)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      </div>
+      <div class="popup-title">Reset everything?</div>
+      <div class="popup-sub">This will delete all rights holders, publishers, title and entered data. Cannot be undone.</div>
+      <div class="popup-actions">
+        <button class="popup-cancel" onclick="document.getElementById('resetPopup').classList.add('hidden')">Cancel</button>
+        <button class="popup-confirm" onclick="confirmReset()">Delete all</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
